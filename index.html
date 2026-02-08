@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+<style>
+body {
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 320px;
+}
+
+h2 {
+    color: #ff4d6d;
+}
+
+button {
+    padding: 10px 22px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background: #ccc;
+    position: absolute;
+}
+
+#result {
+    display: none;
+}
+
+img {
+    width: 220px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="box">
+    <div id="question">
+        <h2>Chuje 💖</h2>
+        <h2>Will you be my Valentine? 🌸</h2>
+        <br>
+        <button id="yes" onclick="yesClick()">Yes 😊</button>
+        <button id="no" onmouseover="moveNo()">No 😝</button>
+    </div>
+
+    <div id="result">
+        <h2>Yay! 🥰</h2>
+        <p>
+            This just made everything feel a little more special ✨<br>
+            Some moments are better when shared 💕
+        </p>
+        <img src="https://media.giphy.com/media/l4FGpPki5v2Bcd6Ss/giphy.gif">
+    </div>
+</div>
+
+<script>
+function moveNo() {
+    const no = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    no.style.left = x + "px";
+    no.style.top = y + "px";
+}
+
+function yesClick() {
+    document.getElementById("question").style.display = "none";
+    document.getElementById("result").style.display = "block";
+}
+</script>
+
+</body>
+</html>
